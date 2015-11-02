@@ -47,6 +47,9 @@ import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.javaee7.movieplex7.entities.Movie;
 import org.javaee7.movieplex7.entities.ShowTiming;
 
@@ -57,6 +60,8 @@ import org.javaee7.movieplex7.entities.ShowTiming;
 @FlowScoped("booking")
 public class Booking implements Serializable {
 
+	Log log = LogFactory.getLog(Booking.class);
+	
     int movieId;
     String startTime;
     int startTimeId;
@@ -65,6 +70,7 @@ public class Booking implements Serializable {
     EntityManager em;
 
     public int getMovieId() {
+    	log.info("logger executed");
         return movieId;
     }
 
