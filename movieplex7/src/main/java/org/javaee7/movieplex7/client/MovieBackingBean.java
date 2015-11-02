@@ -43,6 +43,9 @@ import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
+import org.apache.avalon.framework.logger.LogEnabled;
+import org.apache.log4j.Logger;
+
 /**
  * @author Arun Gupta
  */
@@ -50,12 +53,15 @@ import javax.inject.Named;
 @SessionScoped
 public class MovieBackingBean implements Serializable {
 
+	Logger log = Logger.getLogger(this.getClass());
+	
     int movieId;
     String movieName;
     String actors;
 
     public int getMovieId() {
-        return movieId;
+        log.info("log4j");
+    	return movieId;
     }
 
     public void setMovieId(int mid) {
